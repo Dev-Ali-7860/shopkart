@@ -10,10 +10,11 @@ const Login = () => {
             errors
         }
     } = useForm();
+    const navigate = useNavigate();
 
     const formSubmit = (data) => {
         alert('Login Successful')
-        console.log(data);
+        navigate('/home');
         reset();
     }
 
@@ -22,7 +23,7 @@ const Login = () => {
             <input type="email"
                 placeholder="Enter Email"
                 {...register("email", {
-                    required : 'Email is Required'
+                    required: 'Email is Required'
                 })}
             />
             <br />
@@ -46,8 +47,8 @@ const Login = () => {
                 Clear
             </button>
             <div className="reg-link d-flex">
-            <p>Don't have an account?</p>
-            <Link to='/register'>Register</Link>
+                <p>Don't have an account?</p>
+                <Link to='/register'>Register</Link>
             </div>
         </form>
     )

@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const Navigate = useNavigate();
 
     const {
         register,
@@ -13,7 +14,7 @@ const Register = () => {
 
     const formSubmit = (data) => {
         alert('Registration Successful!');
-        console.log(data);
+        Navigate('/login');
         reset();
     }
 
@@ -67,7 +68,7 @@ const Register = () => {
                 </button>
                 <div className='main d-flex'>
                     <p>Already have an account?</p>
-                    <Link  to='/login'>Login</Link>
+                    <Link to='/login'>Login</Link>
                 </div>
 
             </form>

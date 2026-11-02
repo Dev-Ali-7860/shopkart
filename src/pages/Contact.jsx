@@ -14,8 +14,8 @@ const Contact = () => {
 
     function formSubmit() {
         alert(`✅ Thank you for contacting ShopKart!
-                    Your message has been submitted successfully.
-                    Our team will get back to you soon.`);
+                Your message has been submitted successfully.
+                Our team will get back to you soon.`);
         reset();
     }
     return (
