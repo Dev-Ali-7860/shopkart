@@ -44,7 +44,7 @@ body {
 .navbar {
     display: grid;
     grid-template-areas: "brand search nav";
-    grid-template-columns: auto minmax(220px, 320px) minmax(0, 1fr);
+    grid-template-columns: auto minmax(190px, 260px) minmax(0, 1fr);
     align-items: center;
     gap: clamp(16px, 2vw, 30px);
     padding: 12px clamp(16px, 3vw, 40px);
@@ -141,7 +141,7 @@ body {
     width: 1%;
     min-width: 0;
     margin: 0;
-    padding: 11px 15px;
+    padding: 8px 12px;
     border: 0;
     border-radius: 10px 0 0 10px;
     background: #fff;
@@ -157,7 +157,8 @@ body {
     flex: 0 0 auto;
     width: auto;
     margin: 0;
-    padding: 11px 18px;
+    padding: 8px 13px;
+    font-size: 14px;
     border: 0;
     border-left: 1px solid rgba(35, 30, 93, 0.16);
     border-radius: 0 10px 10px 0;
@@ -214,7 +215,7 @@ body {
     }
 
     .navbar .navbar-search {
-        max-width: 420px;
+        max-width: 340px;
         justify-self: center;
     }
 
@@ -577,12 +578,12 @@ main:has(> .products-heading) {
     padding-bottom: 48px;
 }
 
-main > .products-heading {
+main>.products-heading {
     margin: 34px 16px 28px !important;
     color: var(--text-primary);
 }
 
-main > .products-heading h2 {
+main>.products-heading h2 {
     margin: 0;
     color: var(--text-primary);
     font-size: clamp(30px, 4vw, 42px);
@@ -590,14 +591,14 @@ main > .products-heading h2 {
     letter-spacing: -1.5px;
 }
 
-main > .products-heading p {
+main>.products-heading p {
     margin: 10px 0 0;
     color: var(--text-secondary);
     font-size: 15px;
     font-weight: 400;
 }
 
-main:has(> .products-heading) > label:has(+ select) {
+main:has(> .products-heading)>label:has(+ select) {
     margin-left: clamp(20px, 5vw, 72px);
 }
 
@@ -608,7 +609,7 @@ main:has(> .products-heading) > label:has(+ select) {
     gap: 24px;
 }
 
-.card-prod > .card {
+.card-prod>.card {
     width: 100% !important;
     min-width: 0;
     border: 1px solid var(--border-color);
@@ -629,7 +630,7 @@ main:has(> .products-heading) > label:has(+ select) {
     text-align: center;
 }
 
-.card-prod > .card:hover {
+.card-prod>.card:hover {
     transform: translateY(-5px);
     border-color: color-mix(in srgb, var(--accent) 38%, var(--border-color));
     box-shadow: 0 18px 38px rgba(27, 24, 70, 0.14);
@@ -650,10 +651,9 @@ main:has(> .products-heading) > label:has(+ select) {
     overflow: hidden;
     color: var(--text-primary);
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
 }
 
-.card-prod .card-body h4 + h4 {
+.card-prod .card-body h4+h4 {
     color: var(--accent);
     font-size: 23px;
     font-weight: 800;
@@ -771,7 +771,7 @@ main:has(> .products-heading) :focus-visible {
     padding-bottom: 30px;
 }
 
-main > label:has(+ select) {
+main>label:has(+ select) {
     display: inline-flex;
     align-items: center;
     min-height: 46px;
@@ -785,7 +785,7 @@ main > label:has(+ select) {
     font-weight: 700;
 }
 
-main > label:has(+ select) + select {
+main>label:has(+ select)+select {
     min-height: 46px;
     margin-top: 20px;
     padding: 0 40px 0 14px;
@@ -801,11 +801,11 @@ main > label:has(+ select) + select {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-main > label:has(+ select) + select:hover {
+main>label:has(+ select)+select:hover {
     border-color: var(--accent);
 }
 
-main > label:has(+ select) + select:focus-visible {
+main>label:has(+ select)+select:focus-visible {
     border-color: var(--accent);
     outline: 3px solid color-mix(in srgb, var(--accent) 25%, transparent);
     outline-offset: 2px;
@@ -1570,7 +1570,7 @@ main > label:has(+ select) + select:focus-visible {
     content: none;
 }
 
-.contact-info .form-contact form > p:first-child {
+.contact-info .form-contact form>p:first-child {
     margin: 0 0 28px;
     color: var(--text-primary);
     font-size: 25px;
@@ -1618,7 +1618,7 @@ main > label:has(+ select) + select:focus-visible {
     appearance: auto;
 }
 
-.contact-info .form-contact form > p:not(:first-child) {
+.contact-info .form-contact form>p:not(:first-child) {
     margin: 5px 0 0;
     color: #dc2626;
     font-size: 12px;
@@ -1913,7 +1913,7 @@ main > label:has(+ select) + select:focus-visible {
     color: #a49cff;
 }
 
-.footer-brand > p {
+.footer-brand>p {
     max-width: 330px;
     margin: 14px 0 20px;
     color: #c1bfd4;
@@ -2156,7 +2156,7 @@ section:has(> .about.us) {
     padding: 36px 24px 64px;
 }
 
-.services > h2 {
+.services>h2 {
     grid-column: 1 / -1;
     margin: 0 0 10px;
     color: var(--text-primary);
@@ -2166,7 +2166,7 @@ section:has(> .about.us) {
     text-align: center;
 }
 
-.services > div {
+.services>div {
     min-width: 0;
     padding: 26px 22px;
     border: 1px solid var(--border-color);
@@ -2176,12 +2176,12 @@ section:has(> .about.us) {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.services > div:hover {
+.services>div:hover {
     transform: translateY(-4px);
     border-color: color-mix(in srgb, var(--accent) 45%, var(--border-color));
 }
 
-.services > div h3 {
+.services>div h3 {
     margin: 0 0 10px;
     color: var(--text-primary);
     font-size: 17px;
@@ -2189,7 +2189,7 @@ section:has(> .about.us) {
     line-height: 1.35;
 }
 
-.services > div p {
+.services>div p {
     margin: 0;
     color: var(--text-secondary);
     font-size: 14px;
@@ -2274,7 +2274,7 @@ section:has(> .img-story) {
     overflow: hidden;
 }
 
-.brands > div {
+.brands>div {
     display: flex;
     flex: 1 1 170px;
     align-items: center;
@@ -2291,7 +2291,7 @@ section:has(> .img-story) {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.brands > div:hover {
+.brands>div:hover {
     transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--accent) 45%, var(--border-color));
 }
@@ -2435,7 +2435,7 @@ section:has(> .img-story) {
     backdrop-filter: blur(12px);
 }
 
-.shopping-link-card > span:first-child {
+.shopping-link-card>span:first-child {
     color: #d7d3ff;
     font-size: 10px;
     font-weight: 800;
@@ -2494,6 +2494,7 @@ section:has(> .img-story) {
 }
 
 @media (max-width: 600px) {
+
     section:has(> .about.us),
     section:has(> .img-story) {
         grid-template-columns: 1fr;
@@ -2520,15 +2521,15 @@ section:has(> .img-story) {
         padding: 28px 14px 44px;
     }
 
-    .services > div {
+    .services>div {
         padding: 20px 16px;
     }
 
-    .services > div h3 {
+    .services>div h3 {
         font-size: 15px;
     }
 
-    .services > div p {
+    .services>div p {
         font-size: 13px;
     }
 
@@ -2545,7 +2546,7 @@ section:has(> .img-story) {
         gap: 10px;
     }
 
-    .brands > div {
+    .brands>div {
         flex-basis: calc(50% - 5px);
         gap: 8px;
         min-height: 76px;
@@ -2600,7 +2601,7 @@ section:has(> .img-story) {
         grid-template-columns: 1fr;
     }
 
-    .brands > div {
+    .brands>div {
         flex-basis: 100%;
         max-width: none;
     }
@@ -2889,14 +2890,14 @@ section:has(> .img-story) {
     }
 }
 
-.home-carousel + section {
+.home-carousel+section {
     position: relative;
     width: min(1120px, calc(100% - 40px));
     margin: 0 auto 64px;
     padding-top: 40px;
 }
 
-.home-carousel + section::before {
+.home-carousel+section::before {
     content: "Shop by category";
     display: block;
     margin-bottom: 26px;
@@ -2907,22 +2908,22 @@ section:has(> .img-story) {
     text-align: center;
 }
 
-.home-carousel + section > .category {
+.home-carousel+section>.category {
     display: grid;
     width: 100%;
     margin: 0 0 20px;
     gap: 20px;
 }
 
-.home-carousel + section > .category:first-of-type {
+.home-carousel+section>.category:first-of-type {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.home-carousel + section > .category:last-of-type {
+.home-carousel+section>.category:last-of-type {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.home-carousel + section > .category > div {
+.home-carousel+section>.category>div {
     display: flex;
     min-width: 0;
     width: auto;
@@ -2937,13 +2938,13 @@ section:has(> .img-story) {
     transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.home-carousel + section > .category > div:hover {
+.home-carousel+section>.category>div:hover {
     transform: translateY(-5px);
     border-color: color-mix(in srgb, var(--accent) 38%, var(--border-color));
     box-shadow: 0 18px 38px rgba(27, 24, 70, 0.14);
 }
 
-.home-carousel + section > .category > div img {
+.home-carousel+section>.category>div img {
     display: block;
     width: 100%;
     height: clamp(150px, 19vw, 220px);
@@ -2951,11 +2952,11 @@ section:has(> .img-story) {
     transition: transform 0.35s ease;
 }
 
-.home-carousel + section > .category > div:hover img {
+.home-carousel+section>.category>div:hover img {
     transform: scale(1.035);
 }
 
-.home-carousel + section > .category > div h3 {
+.home-carousel+section>.category>div h3 {
     margin: 17px 18px 11px;
     color: var(--text-primary);
     font-size: clamp(17px, 2vw, 21px);
@@ -2963,7 +2964,7 @@ section:has(> .img-story) {
     text-transform: capitalize;
 }
 
-.home-carousel + section > .category > div a {
+.home-carousel+section>.category>div a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -2976,75 +2977,75 @@ section:has(> .img-story) {
     transition: color 0.2s ease, gap 0.2s ease;
 }
 
-.home-carousel + section > .category > div a::after {
+.home-carousel+section>.category>div a::after {
     content: "→";
     font-size: 17px;
 }
 
-.home-carousel + section > .category > div a:hover {
+.home-carousel+section>.category>div a:hover {
     gap: 12px;
     color: var(--accent-hover);
 }
 
-.home-carousel + section :focus-visible {
+.home-carousel+section :focus-visible {
     outline: 3px solid color-mix(in srgb, var(--accent) 48%, transparent);
     outline-offset: 3px;
 }
 
 @media (max-width: 700px) {
-    .home-carousel + section {
+    .home-carousel+section {
         width: calc(100% - 28px);
         margin-bottom: 44px;
         padding-top: 24px;
     }
 
-    .home-carousel + section > .category {
+    .home-carousel+section>.category {
         gap: 14px;
         margin-bottom: 14px;
     }
 
-    .home-carousel + section > .category:last-of-type {
+    .home-carousel+section>.category:last-of-type {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .home-carousel + section > .category > div img {
+    .home-carousel+section>.category>div img {
         height: clamp(130px, 28vw, 190px);
     }
 
-    .home-carousel + section > .category > div h3 {
+    .home-carousel+section>.category>div h3 {
         margin: 14px 14px 9px;
     }
 
-    .home-carousel + section > .category > div a {
+    .home-carousel+section>.category>div a {
         margin-right: 14px;
         margin-left: 14px;
     }
 }
 
 @media (max-width: 420px) {
-    .home-carousel + section {
+    .home-carousel+section {
         width: calc(100% - 20px);
     }
 
-    .home-carousel + section > .category {
+    .home-carousel+section>.category {
         gap: 10px;
     }
 
-    .home-carousel + section > .category > div {
+    .home-carousel+section>.category>div {
         padding-bottom: 14px;
         border-radius: 14px;
     }
 
-    .home-carousel + section > .category > div img {
+    .home-carousel+section>.category>div img {
         height: 115px;
     }
 
-    .home-carousel + section > .category > div h3 {
+    .home-carousel+section>.category>div h3 {
         margin: 12px 10px 8px;
         font-size: 15px;
     }
 
-    .home-carousel + section > .category > div a {
+    .home-carousel+section>.category>div a {
         margin-right: 10px;
         margin-left: 10px;
         font-size: 12px;
@@ -3077,7 +3078,7 @@ section:has(> .img-story) {
     text-align: center;
 }
 
-.home-benefits > div {
+.home-benefits>div {
     display: flex;
     min-width: 0;
     align-items: center;
@@ -3090,7 +3091,7 @@ section:has(> .img-story) {
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.home-benefits > div:hover {
+.home-benefits>div:hover {
     transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--accent) 40%, var(--border-color));
     box-shadow: 0 12px 24px rgba(27, 24, 70, 0.1);
@@ -3110,7 +3111,7 @@ section:has(> .img-story) {
     line-height: 1;
 }
 
-.home-benefits > div > span:last-child {
+.home-benefits>div>span:last-child {
     display: flex;
     min-width: 0;
     flex-direction: column;
@@ -3143,7 +3144,7 @@ section:has(> .img-story) {
         margin-bottom: 8px;
     }
 
-    .home-benefits > div {
+    .home-benefits>div {
         padding: 15px;
     }
 
