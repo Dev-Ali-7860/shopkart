@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Product from "../components/Product";
 
 const Products = () => {
+    const [searchParams] = useSearchParams();
+    const searchQuery = (searchParams.get("q") || "").trim().toLowerCase();
     const [products, setProducts] = useState([]);
     const [sortOrder, setSortOrder] = useState('');
     const [ratingOrder, setRatingOrder] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
+    const [pageState, setPageState] = useState({ query: searchQuery, page: 1 });
+    const currentPage = pageState.query === searchQuery ? pageState.page : 1;
+    const setCurrentPage = page => setPageState({ query: searchQuery, page });
     const [productsPerPage] = useState(4)
 
     useEffect(() => {
@@ -14,7 +19,11 @@ const Products = () => {
             .then(data => setProducts(data));
     }, [])
 
-    const sortedByPrice = [...products].sort((a, b) => {
+    const matchingProducts = products.filter(product =>
+        `${product.title} ${product.category}`.toLowerCase().includes(searchQuery)
+    );
+
+    const sortedByPrice = [...matchingProducts].sort((a, b) => {
         if (sortOrder === 'LowToHigh') return a.price - b.price;
         if (sortOrder === 'HighToLow') return b.price - a.price;
         if (ratingOrder === 'LowToHighrating') return a.rating.rate - b.rating.rate;
@@ -65,11 +74,16 @@ const Products = () => {
 
             <div className="products-heading" style={{ textAlign: 'center', margin: '20px', fontWeight: 'bolder', fontSize: '30px' }}>
                 <h2>Discover Our Products</h2>
-                <p>Explore our collection and find something you love.</p>
+                <p>
+                    {searchQuery
+                        ? `${matchingProducts.length} results for "${searchParams.get("q")}"`
+                        : "Explore our collection and find something you love."}
+                </p>
             </div>
             <div className="card-prod">
                 {currentProducts.map(prod => (
                     <Product
+                        key={prod.id}
                         title={prod.title}
                         category={prod.category}
                         image={prod.image}
@@ -78,21 +92,26 @@ const Products = () => {
                     />
                 ))}
             </div>
+            {matchingProducts.length === 0 && (
+                <p className="no-search-results" role="status">No products match your search.</p>
+            )}
 
-            <div className="pagination">
-                <button onClick={PreviousPage}
-                    disabled={currentPage === 1}>
-                    Previous
-                </button>
-                <span>
-                    Page {currentPage} of {totalPages}
-                </span>
-                <button
-                    onClick={NextPage}
-                    disabled={currentPage === totalPages || totalPages === 0}>
-                    Next
-                </button>
-            </div>
+            {matchingProducts.length > 0 && (
+                <div className="pagination">
+                    <button onClick={PreviousPage}
+                        disabled={currentPage === 1}>
+                        Previous
+                    </button>
+                    <span>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        onClick={NextPage}
+                        disabled={currentPage === totalPages || totalPages === 0}>
+                        Next
+                    </button>
+                </div>
+            )}
         </>
     )
 }

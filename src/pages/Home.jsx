@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import corousal from '../assets/corousal.png';
 import corousal3 from '../assets/corousal3.png';
 import Clothing from '../assets/Clothing.png';
@@ -8,6 +8,7 @@ import accs from '../assets/accs.png';
 import bags from '../assets/bags.png';
 
 const Home = () => {
+
   return (
     <>
       <section className="home-carousel carousel slide" id="homeCarousel" data-bs-ride="carousel" data-bs-interval="5500">
